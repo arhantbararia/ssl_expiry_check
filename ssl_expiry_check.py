@@ -55,10 +55,11 @@ if __name__ == "__main__":
 
 
 	for domain in domains:
-		remaining_days = get_ssl_expiry(domain)
-		print(f"Domain: {domain}")
-		print(f"Remaining days: {remaining_days}")
+		if len(domain) > 1:
+			remaining_days = get_ssl_expiry(domain)
+			print(f"Domain: {domain}")
+			print(f"Remaining days: {remaining_days}")
 		
-		send_slack_alert(SLACK_WEBHOOK_URL, domain, remaining_days)
+			send_slack_alert(SLACK_WEBHOOK_URL, domain, remaining_days)
 
 
