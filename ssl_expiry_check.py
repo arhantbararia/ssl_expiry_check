@@ -46,7 +46,7 @@ if __name__ == "__main__":
 		exit(1)
 
 
-	SLACK_WEBHOOK_URL = os.environment.get("SLACK_WEBHOOK_URL")
+	SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL")
 	if not SLACK_WEBHOOK_URL:
 		print("SLACK_WEBHOOK_URL environment variable not set.")
 		exit(1)
